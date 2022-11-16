@@ -24,14 +24,14 @@ export const counterSlice = createSlice({
     decrement: (state) => {
       state.value -= 1;
     },
-    // incrementByAmount: (state, action: PayloadAction<number>) => {
-    //   state.value += action.payload;
-    // },
+    incrementByAmount: (state, action: PayloadAction<number>) => {
+      state.value += action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement } = counterSlice.actions;
+export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 
 // example of using a Selector
 export const selectValue = (state: RootState) => state.counter.value;
