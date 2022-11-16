@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import type { RootState } from '../store';
 
 export type CounterState = {
   value: number;
@@ -32,4 +33,10 @@ export const counterSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { increment, decrement } = counterSlice.actions;
 
+// example of using a Selector
+export const selectValue = (state: RootState) => state.counter.value;
+
 export default counterSlice.reducer;
+
+// suggestions for Redux
+// basket, user, theme slices, dark/light themes are good examples
